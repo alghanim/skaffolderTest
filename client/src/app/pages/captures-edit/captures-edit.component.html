@@ -1,0 +1,58 @@
+<!-- TITLE -->
+<div class="mb-40 mt-40">
+    <h1>Captures Edit</h1>
+</div>
+<div class="card mb-40">
+    <div class="card-header">
+        <i class="fa fa-edit"></i> Edit
+    </div>
+    <div class="card-body">
+        <form #editForm="ngForm" [ngClass]="{'was-validated': formValid!=null}">
+            <div class="row justify-content-md-center">
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <label for="cType">CType *</label>
+                        <select name="cType" id="cType" [(ngModel)]="item.cType" class="form-control" #cType="ngModel" required>
+                            <option value=""></option>
+                            <option value="c">c</option>
+                            <option value="r">r</option>
+                            <option value="s">s</option>
+                        </select>
+                        <div class="invalid-feedback">Value is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="captures">Captures *</label>
+                        <input type="text" class="form-control" id="captures" [(ngModel)]="item.captures" name="captures" #captures="ngModel" required>
+                        <div class="invalid-feedback">Value is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="filterOutC">FilterOutC</label>
+                        <input type="text" class="form-control" id="filterOutC" [(ngModel)]="item.filterOutC" name="filterOutC" #filterOutC="ngModel" >
+                    </div>
+                    <div class="form-group">
+                        <label for="filterOutR">FilterOutR</label>
+                        <input type="text" class="form-control" id="filterOutR" [(ngModel)]="item.filterOutR" name="filterOutR" #filterOutR="ngModel" >
+                    </div>
+                    <div class="form-group">
+                        <label for="filterOutS">FilterOutS</label>
+                        <input type="text" class="form-control" id="filterOutS" [(ngModel)]="item.filterOutS" name="filterOutS" #filterOutS="ngModel" >
+                    </div>
+                    <div class="form-group">
+                        <label for="url">Url *</label>
+                        <input type="text" class="form-control" id="url" [(ngModel)]="item.url" name="url" #url="ngModel" required>
+                        <div class="invalid-feedback">Value is required</div>
+                    </div>
+
+
+        
+
+                    <!-- BUTTON BAR -->
+                    <div class="mt-40">
+                        <button class="btn btn-primary pull-right" (click)="save(editForm.valid, item)">Save</button>
+                        <button class="btn btn-secondary pull-right mr-2" (click)="goBack()">Back To List</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
